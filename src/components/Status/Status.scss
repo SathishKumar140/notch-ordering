@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+
+.status-container{
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.light-green{
+    background-color: $LightGreen;
+}
+.light-purple{
+    background-color: $LightPurple;
+}

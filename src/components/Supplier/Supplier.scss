@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.market{
+    padding: 3px 5px;
+    margin: 0 5px;
+    color: $white;
+    background-color: $DarkGrey2;
+}
+
+.pending-onboarding{
+    padding: 3px 10px;
+    margin: 0 5px;
+    color: $black;
+    background-color: $Yellow;
+    border-radius: 10px;
+}
