@@ -1,3 +1,5 @@
+@import 'font-awesome/css/font-awesome.min.css';
+
 @font-face {
   font-family: 'Roboto';
   src: url('./fonts/Roboto-Regular.ttf') format('truetype');
@@ -6,4 +8,9 @@
 body{
   margin: 0;
   font-family: 'Roboto';
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
 }

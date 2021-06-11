@@ -43,7 +43,7 @@ export default class DataTable extends React.Component{
     }
 
     render() {
-        return <table className="responsive-table">
+        return <table className="table">
             <thead>{this.renderHeader()}</thead>
             <tbody>{this.renderRows()}</tbody>
         </table>

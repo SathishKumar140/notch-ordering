@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+
+.filter-container{
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+}
+
+button{
+    height: 40px;
+    background-color: $Daintree;
+    border: none;
+    padding: 0 20px;
+    color: $white;
+    cursor: pointer;
+    i {
+        margin-right: 10px;
+    }
+}

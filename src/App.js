@@ -2,34 +2,77 @@ import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Header from './components/Header';
+import Filter from './components/Filter';
 import DataTable from './components/DataTable';
-import { fetchOrders } from './actions';
-import { cols } from './config';
+import { fetchOrders, resetFilters, setSelectedFilter } from './actions';
+import { cols, filters } from './config';
+import { ALL_STATUS, ALL_SUPPLIERS, STATUS, SUPPLIER } from './constant';
 import './App.scss';
 
 class App extends React.Component {
 
   componentDidMount(){
-    this.props.fetchOrders()  
+    this.props.fetchOrders();
   }
 
+  onOptionSelect = key => (option) => {
+    const { selectedFilters } = this.props;
+    const { value } = option;
+    if(value === ALL_SUPPLIERS || value === ALL_STATUS){
+      const { [key]: selectedKey, ...rest} = selectedFilters;
+      if(!Object.keys(rest).length){
+        this.props.resetFilters()
+      }else{
+        this.props.setSelectedFilter({...rest})
+      }
+    }else{
+      this.props.setSelectedFilter({...selectedFilters, [key]: value })
+    }
+  }
+
+  onResetClick = () => this.props.resetFilters();
+
   render() {
-    const { orderList } = this.props;
+    const { orderList, supplierOptions, statusOptions } = this.props;
+    const modifiedFilterConfig = filters.map(({name, ...rest}) => {
+      switch(name){
+        case SUPPLIER:{
+          return { ...rest, cb: this.onOptionSelect('vendorName'), options: supplierOptions}
+        }
+        case STATUS:{
+          return { ...rest, cb: this.onOptionSelect('orderBuyerStatus'), options: statusOptions}
+        }
+        default: {
+          return {name, ...rest}
+        }
+      }
+    })
     return (
       <section>
         <Header/>
-        <DataTable columns={cols} rows={orderList}/>
+        <section className="filter-bg">
+          <section className="container">
+            <Filter list={modifiedFilterConfig} onResetClick={this.onResetClick}/>
+          </section>
+        </section>
+        <section className="table-bg">
+          <section className="container">
+            <DataTable columns={cols} rows={orderList}/>
+          </section>
+        </section>
       </section>
     );
   }
 }
 
 export default connect(
-  ({ orderList }) => ({ orderList }),
+  ({ filteredList, selectedFilters, supplierOptions, statusOptions }) => ({ orderList: filteredList, selectedFilters, supplierOptions, statusOptions }),
   (dispatch) =>
       bindActionCreators(
           {
-            fetchOrders
+            fetchOrders,
+            resetFilters,
+            setSelectedFilter
           },
           dispatch
       )

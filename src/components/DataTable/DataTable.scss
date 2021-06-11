@@ -1,6 +1,6 @@
 @import '../../styles/colors.scss';
 
-.responsive-table {
+.table {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -18,11 +18,13 @@
     
     tr {
       border: 1px solid $lightGreyBorder;
-      border-bottom: 2px solid $lightGreyBorder;
+      border-bottom: 1px solid $lightGreyBorder;
       padding: 5px;
       margin-bottom: 10px;
       display: block;
       @media screen and (min-width: 600px) {
+        border: none;
+        border-bottom: 1px solid $lightGreyBorder;
         display: table-row;
         border-bottom-width: 1px;
         margin-bottom: 0;

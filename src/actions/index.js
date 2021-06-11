@@ -16,3 +16,16 @@ export function fetchOrders() {
         }
     }
 }
+
+export function resetFilters() {
+    return {
+        type: ActionTypes.RESET_FILTERS
+    }
+}
+
+export function setSelectedFilter(value) {
+    return {
+        type: ActionTypes.SET_SELECTED_FILTER,
+        value
+    }
+}
