@@ -85,7 +85,7 @@ export default class DataTable extends React.Component{
         }
 
         return [...rows].slice(startIndex, endIndex + 1).map(row => {
-            const values = columns.map((({key, ...rest }, i) => <td key={i} data-label={key}>
+            const values = columns.map((({key, display, ...rest }, i) => <td key={i} data-label={display}>
                 {renderValue(row, {...rest, key})}
             </td>))
             return <tr>{values}</tr>

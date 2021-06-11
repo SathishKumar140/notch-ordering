@@ -26,7 +26,7 @@ export function notchReducer(state = initialState, action) {
         }
 
         case ActionTypes.RESET_FILTERS: {
-            return { ...state, filteredList: state.orderList}
+            return { ...state, filteredList: state.orderList, selectedFilters: {}}
         }
 
         case ActionTypes.SET_SELECTED_FILTER: {

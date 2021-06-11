@@ -1,14 +1,22 @@
-import React from 'react';
-import { Dropdown, DropdownMultiple } from 'reactjs-dropdown-component';
+import React, { useRef } from 'react';
+import { Dropdown } from 'reactjs-dropdown-component';
 import { DROPDOWN } from '../../constant';
 import "./Filter.scss";
 
+const DropdownWrapper = (props) => {
+    const { select } = props;
+    const ref = useRef(null);
+    if(select && ref.current){
+        ref.current.selectItem(select)
+    }
+    return <Dropdown ref={ref} {...props} />
+}
+
 const FilterList = ({list = []}) => {
-    return Array.isArray(list) && list.map(({name, type, placeholder, options, cb, wrapperStyle = {}, isMulti = false, listItemStyle}) => {
+    return Array.isArray(list) && list.map(({name, type, placeholder, options, cb, wrapperStyle = {}, isMulti = false, listItemStyle, ...rest}) => {
         switch(type){
             case DROPDOWN: {
-                const DropdownComp = isMulti ? DropdownMultiple : Dropdown
-                return <DropdownComp
+                return <DropdownWrapper
                     name={name}
                     title={placeholder}
                     list={options}
@@ -17,6 +25,7 @@ const FilterList = ({list = []}) => {
                         wrapper: wrapperStyle,
                         listItem: listItemStyle
                     }}
+                    {...rest}
                 />
             }
             default: {

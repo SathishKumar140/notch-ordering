@@ -33,14 +33,26 @@ class App extends React.Component {
   onResetClick = () => this.props.resetFilters();
 
   render() {
-    const { orderList, supplierOptions, statusOptions } = this.props;
+    const { orderList, supplierOptions = [], statusOptions = [], selectedFilters } = this.props;
     const modifiedFilterConfig = filters.map(({name, ...rest}) => {
       switch(name){
         case SUPPLIER:{
-          return { ...rest, cb: this.onOptionSelect('vendorName'), options: supplierOptions}
+          const selectValue = selectedFilters['vendorName'] || ALL_SUPPLIERS;
+          return { 
+            ...rest, 
+            cb: this.onOptionSelect('vendorName'), 
+            options: supplierOptions,
+            ...(supplierOptions.length ? { select: {value: selectValue, label : selectValue } } : {})
+          }
         }
         case STATUS:{
-          return { ...rest, cb: this.onOptionSelect('orderBuyerStatus'), options: statusOptions}
+          const selectValue = selectedFilters['orderBuyerStatus'] || ALL_STATUS;
+          return { 
+            ...rest, 
+            cb: this.onOptionSelect('orderBuyerStatus'), 
+            options: statusOptions,
+            ...(statusOptions.length ? { select: {value: selectValue, label : selectValue } } : {})
+          }
         }
         default: {
           return {name, ...rest}
