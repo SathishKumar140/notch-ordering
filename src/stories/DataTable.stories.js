@@ -53,6 +53,13 @@ Basic.args = {
     rows
 };
 
+export const NoData = Template.bind({});
+
+NoData.args = {
+    columns,
+    rows: []
+};
+
 
 export const PageSize = Template.bind({});
 
