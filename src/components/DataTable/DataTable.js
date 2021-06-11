@@ -13,12 +13,21 @@ export default class DataTable extends React.Component{
         mRows: []
     }
 
+    componentDidMount(){
+       this.setPaginationDataState()
+    }
+
     componentDidUpdate(prevProps){
         const { rows: prevRows = []} = prevProps;
-        const { rows = [], pageSize = 10 } = this.props;
+        const { rows = [] } = this.props;
         if(prevRows !== rows){
-            this.setState({...paginate(rows.length, 1, pageSize), mRows: [...rows]})
+            this.setPaginationDataState();
         }
+    }
+
+    setPaginationDataState = () => {
+        const { rows = [], pageSize = 10 } = this.props;
+        this.setState({...paginate(rows.length, 1, pageSize), mRows: [...rows]})
     }
 
     onColumnClick = key => () => {
@@ -68,7 +77,7 @@ export default class DataTable extends React.Component{
     renderRows() {
         const { columns } = this.props;
         const { startIndex, endIndex, mRows: rows } = this.state;
-
+        
         if(!Array.isArray(columns) && !Array.isArray(rows)){
             return <tr/>
         }
@@ -109,6 +118,7 @@ export default class DataTable extends React.Component{
         const { rows = [] } = this.props;
         const { currentPage, startPage, endPage } = this.state;
         const noData = !rows.length;
+        console.log(currentPage, startPage, endPage, currentPage !== startPage && !noData)
         return <>
             <table className="table">
                 <thead>{this.renderHeader()}</thead>
