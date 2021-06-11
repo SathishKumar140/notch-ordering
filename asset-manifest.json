@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.e293d865.chunk.css",
-    "main.js": "/static/js/main.76cb105b.chunk.js",
-    "main.js.map": "/static/js/main.76cb105b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.36048d86.js",
-    "runtime-main.js.map": "/static/js/runtime-main.36048d86.js.map",
-    "static/css/2.fbae3121.chunk.css": "/static/css/2.fbae3121.chunk.css",
-    "static/js/2.acbe8db6.chunk.js": "/static/js/2.acbe8db6.chunk.js",
-    "static/js/2.acbe8db6.chunk.js.map": "/static/js/2.acbe8db6.chunk.js.map",
-    "static/js/3.40e472cc.chunk.js": "/static/js/3.40e472cc.chunk.js",
-    "static/js/3.40e472cc.chunk.js.map": "/static/js/3.40e472cc.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.fbae3121.chunk.css.map": "/static/css/2.fbae3121.chunk.css.map",
-    "static/css/main.e293d865.chunk.css.map": "/static/css/main.e293d865.chunk.css.map",
-    "static/js/2.acbe8db6.chunk.js.LICENSE.txt": "/static/js/2.acbe8db6.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/static/media/fontawesome-webfont.f691f37e.woff"
+    "main.css": "/notch-ordering/static/css/main.206d8a68.chunk.css",
+    "main.js": "/notch-ordering/static/js/main.76cb105b.chunk.js",
+    "main.js.map": "/notch-ordering/static/js/main.76cb105b.chunk.js.map",
+    "runtime-main.js": "/notch-ordering/static/js/runtime-main.bd78c963.js",
+    "runtime-main.js.map": "/notch-ordering/static/js/runtime-main.bd78c963.js.map",
+    "static/css/2.3c8f057a.chunk.css": "/notch-ordering/static/css/2.3c8f057a.chunk.css",
+    "static/js/2.acbe8db6.chunk.js": "/notch-ordering/static/js/2.acbe8db6.chunk.js",
+    "static/js/2.acbe8db6.chunk.js.map": "/notch-ordering/static/js/2.acbe8db6.chunk.js.map",
+    "static/js/3.40e472cc.chunk.js": "/notch-ordering/static/js/3.40e472cc.chunk.js",
+    "static/js/3.40e472cc.chunk.js.map": "/notch-ordering/static/js/3.40e472cc.chunk.js.map",
+    "index.html": "/notch-ordering/index.html",
+    "static/css/2.3c8f057a.chunk.css.map": "/notch-ordering/static/css/2.3c8f057a.chunk.css.map",
+    "static/css/main.206d8a68.chunk.css.map": "/notch-ordering/static/css/main.206d8a68.chunk.css.map",
+    "static/js/2.acbe8db6.chunk.js.LICENSE.txt": "/notch-ordering/static/js/2.acbe8db6.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/notch-ordering/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.36048d86.js",
-    "static/css/2.fbae3121.chunk.css",
+    "static/js/runtime-main.bd78c963.js",
+    "static/css/2.3c8f057a.chunk.css",
     "static/js/2.acbe8db6.chunk.js",
-    "static/css/main.e293d865.chunk.css",
+    "static/css/main.206d8a68.chunk.css",
     "static/js/main.76cb105b.chunk.js"
   ]
 }
