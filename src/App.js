@@ -66,7 +66,14 @@ class App extends React.Component {
 }
 
 export default connect(
-  ({ filteredList, selectedFilters, supplierOptions, statusOptions }) => ({ orderList: filteredList, selectedFilters, supplierOptions, statusOptions }),
+  ({ filteredList, selectedFilters, supplierOptions, statusOptions }) => (
+    { 
+      orderList: filteredList, 
+      selectedFilters, 
+      supplierOptions, 
+      statusOptions
+    }
+  ),
   (dispatch) =>
       bindActionCreators(
           {

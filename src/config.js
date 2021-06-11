@@ -7,7 +7,8 @@ export const cols = [
     {
       key: 'orderBuyerStatus',
       display: 'STATUS',
-      component: Status
+      component: Status,
+      sort: true
     },
     {
       key: 'deliveryDay',
@@ -22,7 +23,8 @@ export const cols = [
     {
       key: 'vendorName',
       display: 'SUPPLIER',
-      component: Supplier
+      component: Supplier,
+      sort: true
     },
     {
       key: 'total',
@@ -42,7 +44,7 @@ export const filters = [
     name: SUPPLIER,
     placeholder: 'Select supplier',
     options: [],
-    wrapperStyle: { width: '300px', fontSize: '14px', marginRight: '10px'},
+    wrapperStyle: { width: '300px', fontSize: '14px', margin: '5px 10px 0 0'},
     listItemStyle: {fontSize: '14px'},
     cb: () => ({})
   },
@@ -51,7 +53,7 @@ export const filters = [
     name: STATUS,
     placeholder: 'Select status',
     options: [],
-    wrapperStyle: { width: '300px', fontSize: '14px', marginRight: '10px'},
+    wrapperStyle: { width: '300px', fontSize: '14px', margin: '5px 10px 5px 0'},
     listItemStyle: {fontSize: '14px'},
     cb: () => ({})
   }

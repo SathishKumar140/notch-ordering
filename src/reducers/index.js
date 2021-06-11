@@ -2,6 +2,8 @@ import * as ActionTypes from '../constant/types';
 import { ALL_SUPPLIERS, ALL_STATUS } from '../constant';
 
 const initialState = {
+    totalCount: 0,
+    limit: 0,
     orderList: [],
     filteredList: [],
     selectedFilters: {},

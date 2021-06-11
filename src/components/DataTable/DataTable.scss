@@ -10,7 +10,8 @@
       
     thead {
       visibility: hidden;
-      background: $lightGreyBg;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      height: 50px;
       @media screen and (min-width: 600px) {
         visibility: visible;
       }
@@ -39,6 +40,13 @@
     th {
       text-transform: uppercase;
       font-size: 14px;
+    }
+
+    .sort{
+      cursor: pointer;
+      i {
+        padding: 0 10px;
+      }
     }
       
     td {
@@ -71,5 +79,24 @@
         display: none;
       }
     }
+}
+
+.no-rows{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 200px 0;
+}
+
+.pagination{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i{
+    cursor: pointer;
+    padding: 0 10px;
   }
+}
   
