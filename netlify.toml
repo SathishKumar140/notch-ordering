@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/api/*"
-  to = "http://api.interview.staging.foodieorders.com"
+  from = "/api/search"
+  to = "http://api.interview.staging.foodieorders.com/v3/orders/search"
   headers = {Access-Control-Allow-Origin = "*", Access-Control-Allow-Methods = "*"}
   force = true

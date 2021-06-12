@@ -3,7 +3,7 @@ import * as ActionTypes from '../constant/types';
 export function fetchOrders() {
     return async dispatch => {
         try{
-            const response = await fetch(`/api/v3/orders/search`, {
+            const response = await fetch(`/api/search`, {
                 method: "POST",
                 body: JSON.stringify({}),
             })
