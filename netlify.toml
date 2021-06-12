@@ -1,8 +1,0 @@
-[[redirects]]
-  from = "/api/*"
-  to = "http://api.interview.staging.foodieorders.com"
-  status = 200
-  force = true
-  [redirects.headers]
-    X-From = "Netlify"
-    X-Api-Key = "some-api-key-string"
