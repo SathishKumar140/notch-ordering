@@ -2,25 +2,24 @@ const fetch = require('node-fetch')
 
 const handler = async function () {
   try {
-    const response = await fetch('https://icanhazdadjoke.com', {
+    const response = await fetch('http://api.interview.staging.foodieorders.com/v3/orders/search', {
       headers: { Accept: 'application/json' },
+      method: 'POST',
+      body: JSON.stringify({})
     })
     if (!response.ok) {
-      // NOT res.status >= 200 && res.status < 300
       return { statusCode: response.status, body: response.statusText }
     }
     const data = await response.json()
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.joke }),
+      body: JSON.stringify({ msg: data }),
     }
   } catch (error) {
-    // output to netlify function log
     console.log(error)
     return {
       statusCode: 500,
-      // Could be a custom message or object i.e. JSON.stringify(err)
       body: JSON.stringify({ msg: error.message }),
     }
   }
