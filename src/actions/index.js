@@ -3,7 +3,7 @@ import * as ActionTypes from '../constant/types';
 export function fetchOrders() {
     return async dispatch => {
         try{
-            const response = await fetch(`/api/search`, {
+            const response = await fetch(`/.netlify/functions/orders`, {
                 method: "POST",
                 body: JSON.stringify({}),
             })
