@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/api/*"
   to = "http://api.interview.staging.foodieorders.com"
-  status = 200
+  headers = {Access-Control-Allow-Origin = "*", Access-Control-Allow-Methods = "*"}
   force = true
