@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/api/search"
   to = "http://api.interview.staging.foodieorders.com/v3/orders/search"
-  headers = {Access-Control-Allow-Origin = "*", Access-Control-Allow-Methods = "*"}
+  headers = {Access-Control-Allow-Origin = "*", Access-Control-Allow-Methods = "*", X-From = "Netlify"}}
   force = true
