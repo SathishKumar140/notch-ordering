@@ -1,11 +1,9 @@
 import * as ActionTypes from '../constant/types';
 
-const BASE_URL = 'http://api.interview.staging.foodieorders.com';
-
 export function fetchOrders() {
     return async dispatch => {
         try{
-            const response = await fetch(`${BASE_URL}/v3/orders/search`, {
+            const response = await fetch(`/api/search`, {
                 method: "POST",
                 body: JSON.stringify({}),
             })

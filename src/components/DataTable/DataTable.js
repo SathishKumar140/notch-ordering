@@ -118,7 +118,6 @@ export default class DataTable extends React.Component{
         const { rows = [] } = this.props;
         const { currentPage, startPage, endPage } = this.state;
         const noData = !rows.length;
-        console.log(currentPage, startPage, endPage, currentPage !== startPage && !noData)
         return <>
             <table className="table">
                 <thead>{this.renderHeader()}</thead>
